@@ -49,7 +49,7 @@ def get_dict_with_address_district(list_address):
             if r.get(address).decode('utf8'):
                 continue
         except:
-            street, district = get_disctict(address)
+            street, district = get_coordinate(address)
             x = {'district': district, 'street': street}
             r.set(address, str(x))
             number += 1
