@@ -43,7 +43,6 @@ def get_coordinate(address):
         
 
 def get_dict_with_address_district(list_address):
-    number = 0
     for address in list_address:
         try:
             if r.get(address).decode('utf8'):
@@ -52,7 +51,6 @@ def get_dict_with_address_district(list_address):
             street, district = get_coordinate(address)
             x = {'district': district, 'street': street}
             r.set(address, str(x))
-            number += 1
             
 if __name__ == "__main__":
     redis_host = os.environ['REDIS_HOST']
