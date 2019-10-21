@@ -49,8 +49,8 @@ def get_dict_with_address_district(list_address):
                 continue
         except:
             street, district = get_coordinate(address)
-            x = {'district': district, 'street': street}
-            r.set(address, str(x))
+            values = {'district': district, 'street': street}
+            r.set(address, str(values))
             
 if __name__ == "__main__":
     redis_host = os.environ['REDIS_HOST']
